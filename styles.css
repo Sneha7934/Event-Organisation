@@ -1,0 +1,414 @@
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #000000;
+  scroll-behavior: smooth;
+}
+
+/* Header styles*/
+/* Compact & Animated Header */
+.header {
+  background: #110303;
+  box-shadow: 0 2px 8px gray;
+  padding: 0.2rem 0;           /* Reduced padding for smaller height */
+  min-height: 40px;            /* Minimum height for compactness */
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, box-shadow 0.3s;
+  animation: fadeInDown 1s;
+}
+
+.profile-photo img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: transform 0.3s;
+}
+.profile-photo img:hover {
+  transform: scale(1.25) rotate(-8deg);
+}
+
+.profile-name {
+  font-size: 0.95rem;
+  color: #e39a08;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #968db0;
+  margin: 0 0.5rem;
+  font-size: 0.97rem;
+  position: relative;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.navbar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #e39a08;
+  transition: width 0.3s;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: #e39a08;
+  background: rgba(227,154,8,0.08);
+  transform: scale(1.09);
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+  width: 100%;
+}
+
+/* Header entrance animation */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+/* Home Section with Blur and Popup */
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: fadeIn 1.5s;
+}
+
+.home .blur-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.png') center center/cover no-repeat;
+  z-index: 1;
+  animation: fadeIn 2s;
+}
+
+.home .login-popup {
+  position: relative;
+  z-index: 2;
+  alignment-baseline: central;
+  background: url('images/popup-bg.jpg') center center/cover no-repeat, #654aa6;
+  background-blend-mode: overlay;
+  background-color: rgba(255,255,255,0.85);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  min-width: 320px;
+  text-align: center;
+  margin: 0 auto;
+  animation: slideDown 1.2s;
+}
+
+.login-popup h2 {
+  margin-bottom: 1rem;
+  color: #1a0455;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.login-popup input[type="text"],
+.login-popup input[type="password"] {
+  width: 90%;
+  padding: 0.7rem;
+  margin: 0.7rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.login-popup input:focus {
+  border: 1.5px solid #e39a08;
+}
+
+.login-btn {
+  background-color: #e39a08;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: backgroun 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.login-btn:hover {
+  background: #524e40;
+  transform: scale(1.05);
+}
+
+.login-popup a {
+  display: block;
+  margin-top: 1rem;
+  color: #1a0455;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.login-popup a:hover {
+  color: #e39a08;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #1a0455;
+  margin: 2.5rem 0 1.2rem 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: fadeInUp 1.2s;
+}
+
+/* Reviews Section */
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+  padding: 1.2rem 1.5rem;
+  width: 260px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+  transition: transform 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+.review-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 0.7rem;
+  object-fit: cover;
+  border: 2px solid #e39a08;
+}
+
+.review-card h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: #e39a08;
+  font-size: 1.1rem;
+}
+
+.review-card span {
+  color: #524e40;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.7rem;
+}
+
+/* Branches Section */
+.branches-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 2rem 0 3rem 0;
+  animation: fadeIn 1.5s;
+}
+
+.branch {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  color: #1a0455;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.branch i {
+  color: #e39a08;
+  font-size: 1.3rem;
+}
+
+.branch:hover {
+  background: #e39a08;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Services Section */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.2s;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.2s;
+  animation: fadeInUp 1.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  color: #e39a08;
+  margin-bottom: 1rem;
+}
+
+.service-card h4 {
+  color: #1a0455;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #524e40;
+  font-size: 1rem;
+}
+
+.contact {
+  background: #fff;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.contact .heading {
+  text-align: center;
+  color: #1a0455;
+  margin-bottom: 1.5rem;
+}
+
+.inputBox {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inputBox input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+.btn {
+  background: #e39a08;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #524e40;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .home .login-popup {
+    min-width: 90vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .reviews, .branches-list, .services {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .review-card, .service-card, .branch {
+    width: 95vw;
+    min-width: unset;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

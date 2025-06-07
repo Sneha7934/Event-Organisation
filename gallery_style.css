@@ -1,0 +1,71 @@
+
+    /* Extra gallery-specific styles */
+    body {
+      background: #e39a08;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+    }
+    .gallery-header {
+      background: #524e40;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 5vw 4rem 5vw;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+    .gallery-title {
+      text-align: center;
+      padding: 1rem 0 0.5rem 0;
+      font-size: 1.3rem;
+      color: #1a0455;
+      font-weight: 600;
+      background: #f7f6f2;
+    }
+    .gallery-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.7rem 0 1rem 0;
+      background: #f7f6f2;
+    }
+    .gallery-icons a {
+      color: #524e40;
+      font-size: 1.4rem;
+      transition: color 0.2s;
+    }
+    .gallery-icons a:hover {
+      color: #1a0455;
+    }
+    @media (max-width: 600px) {
+      .gallery-header { font-size: 1.5rem; }
+      .gallery-item img { height: 140px; }
+    }
